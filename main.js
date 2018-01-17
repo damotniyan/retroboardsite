@@ -122,7 +122,7 @@ angular.module('fireideaz').controller('MainCtrl', ['$scope', '$filter', '$windo
           $scope.boardContext = $rootScope.boardContext = board.val().boardContext;
           $scope.loading = false;
           $scope.hideVote = board.val().hide_vote;
-          setTimeout(function() {new EmojiPicker();}, 100);
+          // setTimeout(function() {new EmojiPicker();}, 100);
         });
 
         $scope.boardRef = board;
@@ -277,7 +277,7 @@ angular.module('fireideaz').controller('MainCtrl', ['$scope', '$filter', '$windo
       function addMessageCallback(message) {
         var id = message.key;
         angular.element($('#' + id)).scope().isEditing = true;
-        new EmojiPicker();
+        // new EmojiPicker();
         $('#' + id).find('textarea').focus();
       }
 
@@ -747,6 +747,21 @@ angular
 
       return '';
     };
+
+    importExportService.getBoardId = function(board) {
+      if (board) {
+        var clipboard = '';
+
+        var boardId = window.document.location.hash;
+        clipboard = boardId.substr(1);
+
+        return clipboard;
+
+        alert("Board ID has been copied to your clipboard!");
+      }
+
+      return '';
+    }
 
     importExportService.getBoardPureText = function(board, messages, sortField) {
       if (board) {

@@ -9,9 +9,11 @@
   <div class="menu-filters">
     <label for="cardTextFilter" class="menu-controls">Filter Cards</label>
     <input id=cardTextFilter class="filter-message" placeholder="Enter filter text" ng-model="filterMessage" aria-label="Filter your cards" />
-    <span ng-show="voteService.remainingVotes(userId, maxVotes, messages) < maxVotes" class="remaining-votes">Remaining votes: <strong>{{ voteService.remainingVotes(userId, maxVotes, messages) }}</strong>
+  </div>
+  <div class="menu-filters pull-right">
+    <span ng-show="voteService.remainingVotes(userId, maxVotes, messages) < maxVotes" class="remaining-votes">You have <strong>{{ voteService.remainingVotes(userId, maxVotes, messages) }}</strong> votes left for this board
       <span class="null-blank-space">&nbsp;</span>
-      <span class="settings" ng-click="modalService.openVoteSettings(this)"><i class='fa fa-pencil fa-md'></i></span>
+      <!--<span class="settings" ng-click="modalService.openVoteSettings(this)"><i class='fa fa-pencil fa-md'></i></span>-->
     </span>
   </div>
 </div>
